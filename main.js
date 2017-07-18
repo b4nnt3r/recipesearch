@@ -1,30 +1,26 @@
+let container = document.querySelector('.container');
 
-  fetch(
-    "http://www.recipepuppy.com/api/?q=search-term"
+fetch(
+    "https://crossorigin.me/http://www.recipepuppy.com/api/?q=" + (rec.input.value)
   )
-    .then(function(response) {
-      if (response.status !== 200) {
-        console.log(response.status);
-        return;
-      }
-      response.json().then(function(data) {
-        let template = `
-        <div class="title">
-        <header>
-        <h1>${results.title}</h1>
-        </header>
-        </div>
-        <article>
-          <div class="me">
-
+  .then(function(response) {
+    if (response.status !== 200) {
+      console.log(response.status);
+      return;
+    }
+    response.json().then(function(response) {
+        let template = '';
+        response.results.forEach(function(result) {
+          template += `
+          <div class="results">
+            <img src="${result.thumbnail}">
+            <h3><a href="${result.href}" target="blank">${result.title}</a></h3>
           </div>
-        </article>
-        `;
-        document.querySelector('.cont').innerHTML += template;
+      `;
+          container.innerHTML = template
+        });
+      })
+      .catch(function(err) {
+        console.log("Fetch Error :-S", err);
       });
-
-
-    })
-    .catch(function(err) {
-      console.log("Fetch Error :-S", err);
-    });
+  });

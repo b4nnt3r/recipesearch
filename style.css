@@ -1,0 +1,15 @@
+.search {
+  padding-left: 100px;
+  padding-top: 100px;
+}
+
+.container {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  /*margin: auto;*/
+}
+
+.results {
+  padding: 20px;
+}
