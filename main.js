@@ -1,7 +1,7 @@
 let container = document.querySelector('.container');
 
 fetch(
-    "https://crossorigin.me/http://www.recipepuppy.com/api/?q=" + (rec.input.value)
+    "https://crossorigin.me/http://www.recipepuppy.com/api/?q=" + rec.input.value
   )
   .then(function(response) {
     if (response.status !== 200) {
