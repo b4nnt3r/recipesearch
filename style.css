@@ -1,15 +1,18 @@
 .search {
-  padding-left: 100px;
-  padding-top: 100px;
+  padding: 75px;
 }
 
 .container {
-  width: 250px;
+  padding-left: 30px;
   display: flex;
   flex-wrap: wrap;
-  /*margin: auto;*/
 }
 
 .results {
   padding: 20px;
+  width: 250px;
+}
+
+img {
+  width: 200px;
 }
