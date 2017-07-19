@@ -1,7 +1,12 @@
 let container = document.querySelector('.container');
+let input = document.querySelector('#input');
+let button = document.querySelector('.button')
+// let value = input.setAttribute("value", input.value)
+
+button.addEventListener("click", function click() {
 
 fetch(
-    "https://crossorigin.me/http://www.recipepuppy.com/api/?q=" + rec.input.value
+    "https://crossorigin.me/http://www.recipepuppy.com/api/?i=" + input.value
   )
   .then(function(response) {
     if (response.status !== 200) {
@@ -24,3 +29,4 @@ fetch(
         console.log("Fetch Error :-S", err);
       });
   });
+});
